@@ -1,0 +1,13 @@
+# Arquivos de dados (Seus treinos e lista de exercícios)
+*.csv
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Ambientes virtuais (se você usar)
+venv/
+.venv/
+
+# Configurações do Streamlit (opcional)
+.streamlit/
