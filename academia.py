@@ -22,9 +22,13 @@ def carregar_dados():
 def carregar_exercicios():
     try:
         df = conn.read(worksheet="ListaExercicios", ttl=0)
+        # Se a planilha existir mas estiver sem dados, evita erro
+        if df.empty:
+            return []
         return df['nome'].tolist()
-    except:
-        return ["Mesa flexora", "Elevação pélvica", "Remada baixa", "Bíceps direto"]
+    except Exception as e:
+        # Se der erro (ex: aba não existe), mostra uma lista vazia em vez dos 4 pré-definidos
+        return []
 
 
 # --- INICIALIZAÇÃO ---
